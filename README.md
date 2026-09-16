@@ -33,3 +33,5 @@ uma query que funcione de primeira. Ainda estou otimista.
 ### 📫 Contato
 
 Se você tem dados bagunçados, eu tenho tempo livre e paciência duvidos
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/miguel-neri-a427b3420/)
