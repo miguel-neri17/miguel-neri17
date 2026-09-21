@@ -10,6 +10,11 @@ on:
 permissions:
   contents: write
 
+# impede que duas execucoes gravem na main ao mesmo tempo
+concurrency:
+  group: generate-cards
+  cancel-in-progress: false
+
 jobs:
   cards:
     runs-on: ubuntu-latest
@@ -69,3 +74,5 @@ jobs:
         with:
           add: assets
           message: "Atualiza cards do perfil"
+          # traz o que mudou na main antes de gravar, evitando o push rejeitado
+          pull: "--rebase --autostash"
