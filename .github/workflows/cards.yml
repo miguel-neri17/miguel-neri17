@@ -1,0 +1,71 @@
+name: Generate Cards
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: mkdir -p assets
+
+      - name: Estatisticas
+        continue-on-error: true
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=miguel-neri17&show_icons=true&include_all_commits=true&locale=pt-br&bg_color=0d0d0d&title_color=E0112B&text_color=c9d1d9&icon_color=E0112B&border_color=2a0a0f
+          path: assets/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Linguagens
+        continue-on-error: true
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=miguel-neri17&layout=compact&langs_count=6&locale=pt-br&bg_color=0d0d0d&title_color=E0112B&text_color=c9d1d9&border_color=2a0a0f
+          path: assets/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Card do SEV
+        continue-on-error: true
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: pin
+          options: username=miguel-neri17&repo=SEV&bg_color=0d0d0d&title_color=E0112B&text_color=c9d1d9&icon_color=E0112B&border_color=2a0a0f
+          path: assets/sev.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Grafico de atividade
+        continue-on-error: true
+        uses: maurodesouza/github-readme-activity-graph-action@v1
+        with:
+          username: miguel-neri17
+          options: bg_color=0d0d0d&color=c9d1d9&line=E0112B&point=ffffff&area=true&area_color=E0112B&title_color=E0112B&hide_border=true&custom_title=Atividade%20recente
+          output_path: assets/activity-graph.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trofeus
+        continue-on-error: true
+        uses: ryo-ma/github-profile-trophy@master
+        with:
+          username: miguel-neri17
+          output_path: assets/trophy.svg
+          theme: onedark
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: assets
+          message: "Atualiza cards do perfil"
