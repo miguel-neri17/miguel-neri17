@@ -1,8 +1,8 @@
 
       <svg
         width="400"
-        height="120"
-        viewBox="0 0 400 120"
+        height="150"
+        viewBox="0 0 400 150"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
@@ -122,10 +122,10 @@
     
 
     <text class="description" x="25" y="-5"> 
-      <tspan dy="1.2em" x="25">No description provided</tspan>
+      <tspan dy="1.2em" x="25">Sistema de controle de estoque e an&#225;lise de vendas para</tspan><tspan dy="1.2em" x="25">pequenos com&#233;rcios. Aplica&#231;&#227;o web em Django com banco</tspan><tspan dy="1.2em" x="25">SQLite, baixa autom&#225;tica de estoque e dashboard de vendas.</tspan>
     </text>
 
-    <g transform="translate(30, 45)">
+    <g transform="translate(30, 75)">
       <g transform="translate(0, 0)">
     <g data-testid="primary-lang">
       <circle data-testid="lang-color" cx="0" cy="-5" r="6" fill="#3572A5" />
@@ -134,7 +134,7 @@
     </g>
     </g>
     
-  <svg x="0" y="0"><g transform="translate(-3, 68)">
+  <svg x="0" y="0"><g transform="translate(-3, 98)">
       
     </g></svg>
     
